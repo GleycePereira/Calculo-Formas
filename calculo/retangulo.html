@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/math.png">
+    <link rel="stylesheet" href="../css/style2.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <main>
+        <h2>Calcular área do retângulo</h2>
+        <p>Para calcular a área do retângulo, basta calcular o produto entre a sua base e a sua altura, ou seja, a área é dada pela fórmula A=b⋅h.</p>
+
+        <picture>
+            <img src="https://static.todamateria.com.br/upload/57/7b/577bef35ed40f-area-do-retangulo.jpg" alt="retangulo">
+        </picture>
+
+        <form id="retangulo">
+            <label for="base_retangulo">Base do retângulo</label>
+            <input type="number" id="base_retangulo"required>
+
+            <label for="altura_retangulo">Altura retângulo</label>
+            <input type="number" id="altura_retangulo" required>
+
+            <button type="button" id="calcular_btn" onclick="calcular_retangulo()">Calcular Área</button>
+
+            <label class="resultado" for="resultado">Área do retângulo</label>
+            <span id="resultado"></span>
+        </form>
+
+        <div class="home">
+            <a href="../index.html"><img src="../img/casa.png" alt="casa"></a>
+        </div>
+    </main>
+
+    <script>
+        function calcular_retangulo(){
+        var base_retangulo = parseFloat(document.getElementById("base_retangulo").value);
+        var altura_retangulo = parseFloat(document.getElementById("altura_retangulo").value);
+
+        var area_retangulo = base_retangulo * altura_retangulo 
+
+        document.getElementById("resultado").textContent = area_retangulo.toFixed(2);
+        }
+    </script>
+</body>
+</html>

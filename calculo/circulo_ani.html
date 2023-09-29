@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style2.css">
+    <link rel="icon" type="image/x-icon" href="img/math.png">
+    <title>Calculo Circulo Aninhado</title>
+</head>
+<body>
+    <main>
+        <h2>Calcular área do setor circular em um círculo aninhado</h2>
+        <p>Área do Setor Circular Aninhado = π * (R² - r²) * (Ângulo / 360°)</p>
+        <picture>
+            <img src="https://www.infoescola.com/wp-content/uploads/2017/02/setor-circular5.jpg" height="250px" width="280px" alt="setor circular de um círculo">
+        </picture>
+
+        <form id="circulo_aninhado">
+            <label for="raio_externo">Raio externo do círculo aninhado</label>
+            <input type="number" id="raio_externo" required>
+
+            <label for="raio_interno">Raio interno do circulo aninhado</label>
+            <input type="number" id="raio_interno" required>
+
+            <label for="angulo">Ângulo</label>
+            <input type="number" id="angulo" required>
+
+            <button type="button" id="calcular_btn" onclick="calcular_circuloAninhado()">Calcular Área</button>
+
+            <label class="resultado" for="resultado">Área do círculo aninhado</label>
+            <span id="resultado"></span>
+        </form>
+
+        <div class="home">
+            <a href="../index.html"><img src="../img/casa.png" alt="casa"></a>
+        </div>
+    </main>
+
+    <script>
+        function calcular_circuloAninhado(){
+        var raio_externo = parseFloat(document.getElementById("raio_externo").value);
+        var raio_interno = parseFloat(document.getElementById("raio_interno").value);
+        var angulo = parseFloat(document.getElementById("angulo").value);
+
+        var area_circuloAninhado = Math.PI * (Math.pow(raio_externo,2) - Math.pow(raio_interno,2)) * (angulo/360);
+
+        document.getElementById("resultado").textContent = area_circuloAninhado.toFixed(2);
+
+        }
+    </script>
+    
+</body>
+</html>

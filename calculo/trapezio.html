@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/math.png">
+    <link rel="stylesheet" href="../css/style2.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <main>
+        <h2>Calcular área do trapezio irregular</h2>
+        <p>A fórmula para calcular a área de um trapézio irregular é: Área = (Base 1 + Base 2) * Altura / 2</p>
+
+        <picture>
+            <img src="https://static.mundoeducacao.uol.com.br/mundoeducacao/2021/07/elementos-trapezio.jpg" alt="Trapezoide irregular">
+        </picture>
+
+        <form id="trapezoide">
+            <label for="base_menor">Base menor</label>
+            <input type="number" id="base_menor" required>
+
+            <label for="base_maior">Base maior</label>
+            <input type="number" id="base_maior"required>
+
+            <label for="altura_trapezio">Altura</label>
+            <input type="number" id="altura_trapezio">
+
+            <button type="button" id="calcular-btn" onclick="calcular_trapezio()">Calcular Área</button>
+
+            <label class="resultado" for="resultado">Área do trapezio irregular</label>
+            <span id="resultado"></span>
+        </form>
+
+        <div class="home">
+            <a href="../index.html"><img src="../img/casa.png" alt="casa"></a>
+        </div>
+    </main>
+
+    <script>
+         function calcular_trapezio(){
+            var base_menor = parseFloat(document.getElementById("base_menor").value);
+            var base_maior = parseFloat(document.getElementById("base_maior").value);
+            var altura_trapezio = parseFloat(document.getElementById("altura_trapezio").value);
+
+            var area_trapezio = (base_maior+base_menor) * altura_trapezio /2;
+
+            document.getElementById("resultado").textContent = area_trapezio.toFixed(2);
+        }
+    </script>
+</body>
+</html>

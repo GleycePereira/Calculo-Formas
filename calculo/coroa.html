@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/math.png">
+    <link rel="stylesheet" href="../css/style2.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <main>
+        <h2>Calcula area da coroa do circulo</h2>
+        <p>A área da coroa de um círculo, também conhecida como área da região anular, pode ser calculada subtraindo a área de um círculo menor (interno) da área de um círculo maior (externo). Se você souber os raios do círculo maior (externo) e do círculo menor (interno), a fórmula para calcular a área da coroa é a seguinte:
+            Área da Coroa = π * (R² - r²)
+        </p>
+
+        <picture>
+            <img src="https://lh3.ggpht.com/_Qmjqb2Gk9no/TcW6lHupEJI/AAAAAAAAMxE/d1ce4RLh7CM/image_thumb%5B3%5D.png?imgmax=800" alt="coroa do círculo">
+        </picture>
+        <form id="coroa_circulo">
+            <label for="raio_maior">Raio do círculo maior</label>
+            <input type="number" id="raio_maior" required>
+
+            <label for="raio_menor">Raio do círculo menor</label>
+            <input type="number" id="raio_menor" required>
+
+            <button type="button" id="calcular-btn" onclick="calcular_coroa()">Calcular Área</button>
+
+            <label class="resultado" for="resultado">Área da coroa do circulo</label>
+            <span id="resultado"></span>
+        </form>
+
+        <div class="home">
+            <a href="../index.html"><img src="../img/casa.png" alt="casa"></a>
+        </div>
+    </main>
+
+    <script>
+        function calcular_coroa(){
+            var raio_maior = parseFloat(document.getElementById("raio_maior").value);
+            var raio_menor = parseFloat(document.getElementById("raio_menor").value);
+
+            var area_coroa = Math.PI * (Math.pow(raio_maior,2)-Math.pow(raio_menor,2));
+
+            document.getElementById("resultado").textContent = area_coroa.toFixed(2);
+        }
+    </script>
+</body>
+</html>

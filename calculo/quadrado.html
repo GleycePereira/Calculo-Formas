@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/math.png">
+    <link rel="stylesheet" href="../css/style2.css">
+    <title>Calculo Quadrado</title>
+</head>
+<body>
+    <main>
+
+        <h2>Calcular área do quadrado</h2>
+        <p>Para calcular a área do quadrado, basta multiplicar a medida de dois lados (l) dessa figura. Muitas vezes os lados são chamados de base (b) e altura (h).</p>
+
+        <picture>
+            <img src="https://static.todamateria.com.br/upload/57/88/5788f902b7a87-area-do-quadrado.jpg" alt="quadrado">
+        </picture>
+        <form id="quadrado">
+            <label for="lado_quadrado">Lado do quadrado</label>
+            <input type="number" id="lado_quadrado" required>
+
+            <button type="button" id="calcular_btn" onclick="calcular_quadrado()">Calcular Área</button>
+
+            <label class="resultado" for="resultado">Área do quadrado</label>
+            <span id="resultado"></span>
+        </form>
+
+        <div class="home">
+            <a href="../index.html"><img src="../img/casa.png" alt="casa"></a>
+        </div>
+    </main>
+
+    <script>
+        function calcular_quadrado(){
+        var lado_quadrado = parseFloat(document.getElementById("lado_quadrado").value);
+
+        var area_quadrado = lado_quadrado * lado_quadrado;
+
+        document.getElementById("resultado").textContent = area_quadrado.toFixed(2);
+        }
+    </script>
+    
+</body>
+</html>
